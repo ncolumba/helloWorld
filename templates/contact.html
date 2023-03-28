@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{%  block page_title %}contact{%  endblock %}
+{%  block page_title %}Nichelle Columba Contact Page{%  endblock %}
 
 {%  block page_head%}Contact Me{% endblock %}
 
@@ -42,35 +42,34 @@
         <p><a href="/contact">Complete Form Again</a></p>
         {%  else %}
 
-    <form class="row g-3" action="/contact" method="post">
+    <form class="row g-3 needs-validation" action="/contact" method="post">
         <div class="mb-3">
-          <label for="firstname" class="form-label">Firstname</label>
-          <input type="text" class="form-control" id="firstname" name = 'firstname' placeholder="'Nichelle'">
-        </div>
+          <label for="firstname" class="form-label">First Name</label>
+          <input type="text" class="form-control" id="firstname" name = 'firstname' placeholder="'Nichelle'" required>
         <div class="mb-3">
           <label for="middlename" class="form-label">Middle Name</label>
           <input type="text" class="form-control" id="middlename" name = 'middlename' placeholder="'Isabella'">
         </div>
         <div class="mb-3">
-          <label for="lastname" class="form-label">Lastname</label>
-          <input type="text" class="form-control" id="lastname" name = 'lastname' placeholder="'Columba'">
+          <label for="lastname" class="form-label">Last Name</label>
+          <input type="text" class="form-control" id="lastname" name = 'lastname' placeholder="'Columba'" required>
         </div>
         <div class="mb-3">
-          <label for="emailaddress" class="form-label">Email Address</label>
-          <input type="text" class="form-control" id="emailaddress" name = 'emailaddress' placeholder="'nic.columba@gmail.com'">
+          <label for="emailaddress" class="form-label">Preferred Email Address</label>
+          <input type="text" class="form-control" id="emailaddress" name = 'emailaddress' placeholder="'nic.columba@gmail.com'" required>
         </div>
         <div class="col-12">
             <div class="form-check">
                 <input class="form-check-input" type="checkbox" id="agree_check" name="agree_check">
                 <label class="form-check-label" for="agree_check">
-                    Do you agree?
+                    Do you agree to be contacted?
                 </label>
             </div>
         </div>
+        <div><p></p></div>
         <div class="col-12">
-            <button type="submit" class="btn btn-primary">Submit Form</button>
+            <button type="submit" class="btn btn-outline-primary btn-lg">Submit Form</button>
         </div>
-
     </form>
     {% endif %}
 {% endblock %}
