@@ -15,10 +15,19 @@ def hello():  # put application's code here
 def about():  # put application's code here
     return render_template('about.html')
 
+@app.route('/base')
+def base():  # put application's code here
+    return render_template('base.html')
+
 @app.route('/favorite-course')
 def favorite_course():  # put application's code here
     print('You entered your favorite course as: ' + request.args.get('subject') + request.args.get('course_number'))
     return render_template('favorite-course.html')
+
+@app.route('/test')
+def test():  # put application's code here
+    print('You entered your favorite course as: ' + request.args.get('subject') + request.args.get('course_number'))
+    return render_template('test.html')
 
 @app.route('/contact', methods=['GET', 'POST'])
 def contact():  # put application's code here
