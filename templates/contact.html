@@ -45,10 +45,10 @@
             <p>{{ 'Yes' if request.form.get('agree_check') else 'No'}}</p>
         </div>
 
-        <p><a href="{{ url_for('contact')}}">Complete Form Again</a></p>
+        <p><a href="/contact">Complete Form Again</a></p>
         {%  else %}
 
-    <form class="row g-3" action="{{ url_for('contact')}}" method="post">
+    <form class="row g-3" action="/contact" method="post">
         <div class="mb-3">
           <label for="firstname" class="form-label">Firstname</label>
           <input type="text" class="form-control" id="firstname" name = 'firstname' placeholder="'Nichelle'">
