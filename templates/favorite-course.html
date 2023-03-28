@@ -1,8 +1,8 @@
-{% extends "base.html" %}
+{% extends "base.html" %} <!--for the purpose of inheriting the designs from the base.html-->
 
-{%  block page_title %}Nichelle Columba Favorite-Course{%  endblock %}
-{%  block page_head%}Favorite Course{% endblock %}
+{%  block page_title %}Nichelle Columba Favorite-Course{%  endblock %} <!--to allow a name on the webpage tab for organizational purposes-->
+{%  block page_head%}Favorite Course{% endblock %}<!--to help identify the document-->
 
-{% block page_content %}
+{% block page_content %}<!--the below line is used for the purpose of retrieving favorite course information-->
     <p class="fw-lighter fs-4">You entered your favorite course as: {{request.args.get('subject')}} {{request.args.get('course_number')}}</p>
 {% endblock %}

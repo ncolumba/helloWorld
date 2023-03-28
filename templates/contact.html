@@ -1,10 +1,10 @@
-{% extends "base.html" %}
+{% extends "base.html" %}<!--for the purpose of inheriting the designs from the base.html-->
 
-{%  block page_title %}Nichelle Columba Contact Page{%  endblock %}
+{%  block page_title %}Nichelle Columba Contact Page{%  endblock %}<!--to allow a name on the webpage tab for organizational purposes-->
 
-{%  block page_head%}Contact Me{% endblock %}
+{%  block page_head%}Contact Me{% endblock %}<!--to help identify the document-->
 
-{% block page_content %}
+{% block page_content %}<!--the below lines of code are for the purpose of retrieving and regurgitating information for data driven decision-making-->
     {%  if form_submitted %}
         <div class="col-12">
             <h2>Thank you for completing my form!</h2>
@@ -40,10 +40,10 @@
         </div>
         </div>
 
-        <p><a href="/contact">Complete Form Again</a></p>
+        <p><a href="/contact">Complete Form Again</a></p><!--for the purpose of allowing the user to enter additional information-->
         {%  else %}
 
-    <form class="row g-3 needs-validation" action="/contact" method="post">
+    <form class="row g-3 needs-validation" action="/contact" method="post"><!--to create a form that will capture information the user inputs for organizational purposes-->
         <div class="mb-3">
           <label for="firstname" class="fw-bolder fs-5">First Name</label>
           <input type="text" class="form-control" id="firstname" name = 'firstname' placeholder="Example: 'Nichelle'" required>
@@ -70,7 +70,7 @@
         </div>
         <div><p></p></div>
         <div class="col-12">
-            <button type="submit" class="btn btn-outline-light btn-lg">Submit Form</button>
+            <button type="submit" class="btn btn-outline-light btn-lg">Submit Form</button><!--to allow the user to submit information into the system for tracking-->
         </div>
     </form>
     {% endif %}
