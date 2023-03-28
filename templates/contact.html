@@ -10,31 +10,31 @@
             <h2>Thank you for completing my form!</h2>
         </div>
         <div class="col-md-6">
-            <p>First Name: </p>
+            <p class="fw-bolder fs-5">First Name: </p>
         </div>
         <div class="col-md-6">
             <p>{{ request.form.get('firstname') }}</p>
         </div>
         <div class="col-md-6">
-            <p>Middle Name: </p>
+            <p class="fw-bolder fs-5">Middle Name: </p>
         </div>
         <div class="col-md-6">
             <p>{{ request.form.get('middlename')}}</p>
         </div>
         <div class="col-md-6">
-            <p>Last Name:</p>
+            <p class="fw-bolder fs-5">Last Name:</p>
         </div>
         <div class="col-md-6">
             <p>{{ request.form.get('lastname')}}</p>
         </div>
         <div class="col-md-6">
-            <p>Email: </p>
+            <p class="fw-bolder fs-5">Email: </p>
         </div>
         <div class="col-md-6">
             <p>{{ request.form.get('emailaddress') }}</p>
         </div>
         <div class="col-md-6">
-            <p>Agree to Be Contacted:
+            <p class="fw-bolder fs-5">Agree to Be Contacted:
         <div class="col-md-6">
             <p>{{ 'Yes' if request.form.get('agree_check') else 'No'}}</p>
         </div>
@@ -45,32 +45,32 @@
 
     <form class="row g-3 needs-validation" action="/contact" method="post">
         <div class="mb-3">
-          <label for="firstname" class="form-label">First Name</label>
-          <input type="text" class="form-control" id="firstname" name = 'firstname' placeholder="'Nichelle'" required>
+          <label for="firstname" class="fw-bolder fs-5">First Name</label>
+          <input type="text" class="form-control" id="firstname" name = 'firstname' placeholder="Example: 'Nichelle'" required>
         </div>
         <div class="mb-3">
-          <label for="middlename" class="form-label">Middle Name</label>
-          <input type="text" class="form-control" id="middlename" name = 'middlename' placeholder="'Isabella'">
+          <label for="middlename" class="fw-bolder fs-5">Middle Name</label>
+          <input type="text" class="form-control" id="middlename" name = 'middlename' placeholder="Example: 'Isabella'">
         </div>
         <div class="mb-3">
-          <label for="lastname" class="form-label">Last Name</label>
-          <input type="text" class="form-control" id="lastname" name = 'lastname' placeholder="'Columba'" required>
+          <label for="lastname" class="fw-bolder fs-5">Last Name</label>
+          <input type="text" class="form-control" id="lastname" name = 'lastname' placeholder="Example: 'Columba'" required>
         </div>
         <div class="mb-3">
-          <label for="emailaddress" class="form-label">Preferred Email Address</label>
-          <input type="text" class="form-control" id="emailaddress" name = 'emailaddress' placeholder="'nic.columba@gmail.com'" required>
+          <label for="emailaddress" class="fw-bolder fs-5">Preferred Email Address</label>
+          <input type="text" class="form-control" id="emailaddress" name = 'emailaddress' placeholder="Example: 'nic.columba@gmail.com'" required>
         </div>
         <div class="col-12">
             <div class="form-check">
                 <input class="form-check-input" type="checkbox" id="agree_check" name="agree_check">
-                <label class="form-check-label" for="agree_check">
+                <label class="fw-bolder fs-7" for="agree_check">
                     Do you agree to be contacted?
                 </label>
             </div>
         </div>
         <div><p></p></div>
         <div class="col-12">
-            <button type="submit" class="btn btn-outline-primary btn-lg">Submit Form</button>
+            <button type="submit" class="btn btn-outline-light btn-lg">Submit Form</button>
         </div>
     </form>
     {% endif %}
