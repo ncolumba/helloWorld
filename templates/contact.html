@@ -1,3 +1,7 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Contact</title>
+
 {% extends "base.html" %}
 
 {%  block page_title %}Nichelle Columba Contact Page{%  endblock %}
@@ -38,6 +42,7 @@
         <div class="col-md-6">
             <p>{{ 'Yes' if request.form.get('agree_check') else 'No'}}</p>
         </div>
+        </div>
 
         <p><a href="/contact">Complete Form Again</a></p>
         {%  else %}
@@ -69,6 +74,7 @@
         <div><p></p></div>
         <div class="col-12">
             <button type="submit" class="btn btn-outline-primary btn-lg">Submit Form</button>
+        </div>
         </div>
     </form>
     {% endif %}
