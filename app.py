@@ -35,6 +35,8 @@ def student_view(student_id):
         flash(f'Student attempting to be viewed could not be found!', 'error')
         return redirect(url_for('student_view_all'))
 
+
+
 @app.route('/student/create', methods=['GET', 'POST'])
 def student_create():
     if request.method == 'GET':
@@ -96,6 +98,7 @@ def student_edit(student_id):
 
     return redirect(url_for('student_view_all'))
 
+
 @app.route('/student/delete/<int:student_id>')
 def student_delete(student_id):
     student = Student.query.filter_by(student_id=student_id).first()
@@ -121,8 +124,8 @@ if __name__ == '__main__':
 
         # Execute only once! Initial loading of available majors
 
-        majors = ['Accounting', 'Finance', 'Information Systems', 'International Business', 'Management', \
-                    'Operations Management & Business Analytics', 'Supply Chain Management']
+        majors = ['Accounting', 'Finance', 'Information Systems', 'International Business', 'Management',
+                  'Operations Management & Business Analytics', 'Supply Chain Management']
         for each_major in majors:
             print(each_major)
             amajor = Major(major=each_major)
@@ -130,8 +133,3 @@ if __name__ == '__main__':
             db.session.commit()
 
     app.run()
-
-
-
-
-
