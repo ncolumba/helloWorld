@@ -45,12 +45,12 @@ def student_create():
     elif request.method == 'POST':
         first_name = request.form['first_name']
         last_name = request.form['last_name']
+        email = request.form['email']
         major_id = request.form['major_id']
-
         birth_date = request.form['birth_date']
         is_honors = True if 'is_honors' in request.form else False
 
-        student = Student(first_name=first_name, last_name=last_name, major_id=major_id,
+        student = Student(first_name=first_name, last_name=last_name, email=email, major_id=major_id,
                           birth_date=dt.strptime(birth_date, '%Y-%m-%d'), is_honors=is_honors)
         db.session.add(student)
         db.session.commit()
@@ -120,7 +120,7 @@ if __name__ == '__main__':
         db.create_all()
 
         # Execute only once! Initial loading of available majors
-        """
+
         majors = ['Accounting', 'Finance', 'Information Systems', 'International Business', 'Management', \
                     'Operations Management & Business Analytics', 'Supply Chain Management']
         for each_major in majors:
@@ -128,7 +128,7 @@ if __name__ == '__main__':
             amajor = Major(major=each_major)
             db.session.add(amajor)
             db.session.commit()
-        """
+
     app.run()
 
 
