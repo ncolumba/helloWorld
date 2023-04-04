@@ -36,7 +36,6 @@ def student_view(student_id):
         return redirect(url_for('student_view_all'))
 
 
-
 @app.route('/student/create', methods=['GET', 'POST'])
 def student_create():
     if request.method == 'GET':
