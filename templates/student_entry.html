@@ -2,11 +2,11 @@
 
 {% block page_title %}
     {% if action and action == 'create' %}
-        Add New Student
+        Nichelle Columba Add New Student
     {% elif action and action == 'update'  %}
-        Update Student
+        Nichelle Columba Update Student
     {% else %}
-        View Student
+        Nichelle Columba View Student
     {% endif %}
 
 {% endblock %}
@@ -28,7 +28,7 @@
   <div class="col-md-4">
     <label for="first_name" class="form-label"><strong>First Name</strong></label>
     {% if action and action in ['create', 'update'] %}
-    <input type="text" class="form-control" id="first_name" name="first_name" value="{{ student['first_name'] if student else '' }}" required>
+    <input type="text" class="form-control" id="first_name" name="first_name" value="{{ student['first_name'] if student else '' }}" placeholder="Example: 'Nichelle'"required>
     {% else %}
         <br>{{ student['first_name'] }}
     {% endif %}
@@ -36,7 +36,7 @@
   <div class="col-md-4">
     <label for="last_name" class="form-label"><strong>Last Name</strong></label>
     {% if action and action in ['create', 'update'] %}
-    <input type="text" class="form-control" id="last_name" name="last_name" value="{{ student['last_name'] if student else '' }}" required>
+    <input type="text" class="form-control" id="last_name" name="last_name" value="{{ student['last_name'] if student else '' }}" placeholder="Example: 'Columba'"required>
     {% else %}
         <br>{{ student['last_name'] }}
     {% endif %}
@@ -44,7 +44,7 @@
   <div class="col-md-4">
     <label for="email" class="form-label"><strong>Email</strong></label>
     {% if action and action in ['create', 'update'] %}
-    <input type="email" class="form-control" id="email" name="email" maxlength="100" value="{{ student['email'] if student else '' }}" required>
+    <input type="email" class="form-control" id="email" name="email" maxlength="100" value="{{ student['email'] if student else '' }}" placeholder="Example: 'nic.columba@gmail.com'"required>
     {% else %}
         <br>{{ student['email'] }}
     {% endif %}
@@ -115,10 +115,10 @@
   </div>
   <div class="col-12 text-center">
     {% if action and action in ['create', 'update'] %}
-    <button class="btn btn-primary" type="submit">{{ 'Add' if action=='create' else 'Update' }} Student</button>
+    <button class="btn btn-warning" type="submit">{{ 'Add' if action=='create' else 'Update' }} Student</button>
     {% endif %}
 
-    <a href="{{ url_for('student_view_all') }}" class="btn btn-secondary" role="button">
+    <a href="{{ url_for('student_view_all') }}" class="btn btn-danger" role="button">
         {% if action and action in ['create', 'update'] %}
         Cancel
         {% else %}

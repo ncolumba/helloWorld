@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block page_title %}
-    View All Students
+    Nichelle Columba View All Students
 {% endblock %}
 
 {% block page_head %}
@@ -16,7 +16,7 @@
         {% with messages = get_flashed_messages(with_categories=true) %}
             {% if messages %}
                 {% for category, message in messages %}
-                  <div class="alert {{ 'alert-success' if category == 'success' else 'alert-danger' }}" role="alert">
+                  <div class="alert {{ 'alert-warning' if category == 'success' else 'alert-danger' }}" role="alert">
                     {{ message }}
                   </div>
                 {% endfor %}
@@ -41,9 +41,9 @@
             <td>{{ each_major['major'] }}</td>
             <td>{{ 'Yes' if each_student['is_honors'] == 1 else 'No' }}</td>
             <td>
-                <a href="{{ url_for('student_edit', student_id=each_student['student_id']) }}" class="btn btn-secondary" role="button">Edit</a>
+                <a href="{{ url_for('student_edit', student_id=each_student['student_id']) }}" class="btn btn-warning" role="button">Edit</a>
                 &nbsp;
-                <a href="{{ url_for('student_delete', student_id=each_student['student_id']) }}" class="btn btn-secondary" role="button">Delete</a>
+                <a href="{{ url_for('student_delete', student_id=each_student['student_id']) }}" class="btn btn-danger" role="button">Delete</a>
             </td>
         </tr>
         {% endfor %}
@@ -59,7 +59,7 @@
 
     <div class="row">
         <div class="col text-center">
-            <a href="{{ url_for('student_create') }}" class="btn btn-primary" role="button">Add New Student</a>
+            <a href="{{ url_for('student_create') }}" class="btn btn-warning" role="button">Add New Student</a>
         </div>
     </div>
 
